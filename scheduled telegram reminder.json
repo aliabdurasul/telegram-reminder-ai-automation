@@ -29,7 +29,7 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n  \"messages\": [\n    \"💧 Ceylinim💕 Su zamanı! Sağlığın için bir bardak iç 😘\",\n    \"🌸 Bitanemm💕 Günün enerjisi suyla başlar, hadi iç bir bardak 💕\",\n    \"🥤 Yavrumm💕 Susuz kalma, biraz su iç ve gülümse 🥰\",\n    \"🌞 Aşkım💕 Enerjini yüksek tutmak için su içmeyi unutma!\",\n    \"🍀 Canımmm💕 Vücudun susuz kalmasın, bir bardak su al 💖\",\n    \"🍳 Tatlım💕 Kahvaltını yaptın mı? Enerjini yüksek tut 💕\",\n    \"🥪 Bebeğim💕 Öğle yemeğini ihmal etme, kendine zaman ayır ❤️\",\n    \"🍽️ Kiraz Yanaklımm💕 Akşam yemeğini unutma, sağlıklı kal 💖\",\n    \"💌 Minik aşkım💕 Seni seviyorum 😘\",\n    \"💖 Yavrum💕 Bugün çok güzelsin, unutma 💕\",\n    \"🥰 Bebeğim💕 Seni mutlu etmek için her zaman buradayım ❤️\",\n    \"🌸 Tatlım💕 Akşam yemeğinden sonra birlikte gülümseyelim 💖\",\n    \"💦 Canımmm💕 Günün enerjisi seninle olsun, sevgi dolu 💕\",\n    \"💞 Bebeğim💕 Senin mutlu olmanı görmek bana yetiyor 💖\",\n    \"🌷 Aşkım💕 Sadece seni düşündüm ve gülümsedim 💕\",\n    \"📱 Yavrum💕 Bana mesaj at, sesini duymak istiyorum 🥰\",\n    \"💌 Bitanemm💕 Seni çok seviyorum, bunu senden duymak istedim ❤️\",\n    \"🎤 Kiraz Yanaklımm💕 Sesli mesaj atabilir misin? Özledim 💖\",\n    \"💬 Yavrumm💕 Mesajını bekliyorum tatlım 💕\",\n    \"📸 Canımmm💕 Bana fotoğraf atar mısın? İşte bir örnek: https://example.com/fotograf.jpg\"\n  ]\n}",
+        "jsonOutput": "{\n  \"messages\": [ ## here message u want to send ]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.set",
