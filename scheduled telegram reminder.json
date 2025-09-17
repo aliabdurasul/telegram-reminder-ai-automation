@@ -1,0 +1,121 @@
+{
+  "name": "scheduled telegram reminder",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "=0 */2 8-23 * * *"
+            },
+            {
+              "field": "minutes",
+              "minutesInterval": "={{ Math.floor(Math.random() * 60) }}\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "70468841-9519-4f5b-b27b-229bc89212c5",
+      "name": "Schedule Trigger",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"messages\": [\n    \"💧 Ceylinim💕 Su zamanı! Sağlığın için bir bardak iç 😘\",\n    \"🌸 Bitanemm💕 Günün enerjisi suyla başlar, hadi iç bir bardak 💕\",\n    \"🥤 Yavrumm💕 Susuz kalma, biraz su iç ve gülümse 🥰\",\n    \"🌞 Aşkım💕 Enerjini yüksek tutmak için su içmeyi unutma!\",\n    \"🍀 Canımmm💕 Vücudun susuz kalmasın, bir bardak su al 💖\",\n    \"🍳 Tatlım💕 Kahvaltını yaptın mı? Enerjini yüksek tut 💕\",\n    \"🥪 Bebeğim💕 Öğle yemeğini ihmal etme, kendine zaman ayır ❤️\",\n    \"🍽️ Kiraz Yanaklımm💕 Akşam yemeğini unutma, sağlıklı kal 💖\",\n    \"💌 Minik aşkım💕 Seni seviyorum 😘\",\n    \"💖 Yavrum💕 Bugün çok güzelsin, unutma 💕\",\n    \"🥰 Bebeğim💕 Seni mutlu etmek için her zaman buradayım ❤️\",\n    \"🌸 Tatlım💕 Akşam yemeğinden sonra birlikte gülümseyelim 💖\",\n    \"💦 Canımmm💕 Günün enerjisi seninle olsun, sevgi dolu 💕\",\n    \"💞 Bebeğim💕 Senin mutlu olmanı görmek bana yetiyor 💖\",\n    \"🌷 Aşkım💕 Sadece seni düşündüm ve gülümsedim 💕\",\n    \"📱 Yavrum💕 Bana mesaj at, sesini duymak istiyorum 🥰\",\n    \"💌 Bitanemm💕 Seni çok seviyorum, bunu senden duymak istedim ❤️\",\n    \"🎤 Kiraz Yanaklımm💕 Sesli mesaj atabilir misin? Özledim 💖\",\n    \"💬 Yavrumm💕 Mesajını bekliyorum tatlım 💕\",\n    \"📸 Canımmm💕 Bana fotoğraf atar mısın? İşte bir örnek: https://example.com/fotograf.jpg\"\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "0b89a759-ca3d-4d84-8ce1-af68cc21fd9a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "6715645418",
+        "text": "={{ $json[\"messages\"][Math.floor(Math.random() * $json[\"messages\"].length)].trim() }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "affa1f2c-faea-4b17-ad5e-b751b609f6a4",
+      "name": "Send a text message",
+      "webhookId": "68e8040f-d182-4fc3-8234-cd2b032c8916",
+      "credentials": {
+        "telegramApi": {
+          "id": "wOMzMU4YLA4JICWh",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2025-09-17T13:53:49.136+03:00",
+          "Readable date": "September 17th 2025, 1:53:49 pm",
+          "Readable time": "1:53:49 pm",
+          "Day of week": "Wednesday",
+          "Year": "2025",
+          "Month": "September",
+          "Day of month": "17",
+          "Hour": "13",
+          "Minute": "53",
+          "Second": "49",
+          "Timezone": "Europe/Bucharest (UTC+03:00)"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "fe9a8873-b634-4710-88c1-bab31e6b58b8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2d91e9df69c1728688f900d86b2c895efb3653de254f67b204d734fb6e57481f"
+  },
+  "id": "woLy8uUM1MyxiU98",
+  "tags": []
+}
